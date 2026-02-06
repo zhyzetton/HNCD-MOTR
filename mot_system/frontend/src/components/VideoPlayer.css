@@ -1,0 +1,35 @@
+.video-player {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.player-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+}
+
+.player-container {
+  background: #000;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: var(--spacing-md);
+}
+
+.video-element {
+  width: 100%;
+  display: block;
+  max-height: 70vh;
+}
+
+.player-actions {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.player-actions .btn svg {
+  flex-shrink: 0;
+}

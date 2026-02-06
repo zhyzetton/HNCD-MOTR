@@ -1,0 +1,35 @@
+MotChallenge2DBox
+
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/y23_zhanghaoyu/dev/anaconda3/envs/MeMOTR/lib/python3.10/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+  File "/home/y23_zhanghaoyu/dev/anaconda3/envs/MeMOTR/lib/python3.10/multiprocessing/pool.py", line 48, in mapstar
+    return list(map(*args))
+  File "/home/y23_zhanghaoyu/subject/MeMOTR/TrackEval/trackeval/_timing.py", line 64, in wrap
+    return f(*args, **kw)
+  File "/home/y23_zhanghaoyu/subject/MeMOTR/TrackEval/trackeval/eval.py", line 195, in eval_sequence
+    data = dataset.get_preprocessed_seq_data(raw_data, cls)
+  File "/home/y23_zhanghaoyu/subject/MeMOTR/TrackEval/trackeval/_timing.py", line 64, in wrap
+    return f(*args, **kw)
+  File "/home/y23_zhanghaoyu/subject/MeMOTR/TrackEval/trackeval/datasets/mot_challenge_2d_box.py", line 365, in get_preprocessed_seq_data
+    raise(TrackEvalException('Attempting to evaluate using invalid gt classes. '
+trackeval.utils.TrackEvalException: Attempting to evaluate using invalid gt classes. This warning only triggers if preprocessing is performed, e.g. not for MOT15 or where prepropressing is explicitly disabled. Please either check your gt data, or disable preprocessing. The following invalid classes were found in timestep 0: -1
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/y23_zhanghaoyu/subject/MeMOTR/TrackEval/trackeval/eval.py", line 81, in evaluate
+    results = pool.map(_eval_sequence, seq_list)
+  File "/home/y23_zhanghaoyu/dev/anaconda3/envs/MeMOTR/lib/python3.10/multiprocessing/pool.py", line 367, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+  File "/home/y23_zhanghaoyu/dev/anaconda3/envs/MeMOTR/lib/python3.10/multiprocessing/pool.py", line 774, in get
+    raise self._value
+trackeval.utils.TrackEvalException: Attempting to evaluate using invalid gt classes. This warning only triggers if preprocessing is performed, e.g. not for MOT15 or where prepropressing is explicitly disabled. Please either check your gt data, or disable preprocessing. The following invalid classes were found in timestep 0: -1
+
+
+
+
+
